@@ -1,2 +1,7 @@
 Day 1: 5/12/16
-		added a Dev Log!!!!!
+		-added a Dev Log!!!!!
+		-made a sine graph wave up on the screen
+		
+	17/5/16
+	
+	-made two circles that both track graph in opposite directions
