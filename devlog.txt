@@ -2,6 +2,22 @@ Day 1: 5/12/16
 		-added a Dev Log!!!!!
 		-made a sine graph wave up on the screen
 		
-	17/5/16
+Day: 3 17/5/16
 	
 	-made two circles that both track graph in opposite directions
+	-added differing speeds
+	-made collision detection when mouse pressed and score gets added
+	
+	goals for next block:
+	  - make new levels with random speeds and different shape
+	  
+Day 4: 5/19/16
+
+	- made the game more easier
+	- made an end screen that needs to be worked on 
+	- made it more visually appeling
+
+Day 6: 5/23/16
+	-missed day 5 :(
+	-made new levels
+	-made methods to hold previously free floating things
