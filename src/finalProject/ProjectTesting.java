@@ -25,10 +25,11 @@ public class ProjectTesting extends PApplet {
 	int score;
 	int mode;
 	
+	
 
 	public void setup() {
 		size(600, 600);
-
+        
 		middle = 300;
 		strt = 10;
 		shift = 100;
@@ -49,29 +50,29 @@ public class ProjectTesting extends PApplet {
 		
 		score = 0;
 		
-		mode = 0;
+		mode = 1;
 		
 		textSize(30);
+		
+		
 	
 	}
 
 	public void draw() {
 		background(200);
 		
-		
-		if(mode == 0)	levelOne();
-		if(mode == 1)levelTwo();
-		if(mode == 2)levelThree();
-	
+		fill(0);
+		text("level: " + mode, 50, 50);
 		
 		
+		if(mode == 1)levelOne();
+		if(mode == 2)levelTwo();
+		if(mode == 3)levelThree();
+		if(mode == 4)levelFour();
+		if(mode == 5) levelFive();
+		if(mode == 6)levelSix();
+		if(mode == 7)seven();
 		
-		/*if( score == 1){
-			background(230);
-			fill(0);
-			text("You win!!!", 270, 200);
-		
-		}*/
 	}
 
 	public void drawLine(int x, int shift, int nextAmount, double width) {
@@ -81,10 +82,12 @@ public class ProjectTesting extends PApplet {
 
 		int x1 = x;
 		int x2 = x + nextAmount;
-
+		
 		int y1 = (int) (Math.sin(x1 / width) * shift) + middle;
-		int y2 = (int) (Math.sin(x2 / width) * shift) + middle;
-
+		int y2  = (int) (Math.sin(x2 / width) * shift) + middle;
+		
+		
+		
 		line(x1, y1, x2, y2);
 
 		
@@ -97,8 +100,8 @@ public class ProjectTesting extends PApplet {
 		int x1 = redX;
 		int x2 = redX + 1;
 	
-		int y1 = (int) (Math.sin(x1 / width) * shift) + 300;
-		int y2 = (int) (Math.sin(x2 / width) * shift) + 300;
+		int y1 = (int) (Math.sin(x1 / width) * shift) + middle;
+		int y2 = (int) (Math.sin(x2 / width) * shift) + middle;
 
 	if(rxSpeed > 0){
 		rySpeed = (y2 - y1);
@@ -119,8 +122,8 @@ public class ProjectTesting extends PApplet {
 		int x1 = blueX;
 		int x2 = blueX - 1;
 	
-		int y1 = (int) (Math.sin(x1 / width) * shift) + 300;
-		int y2 = (int) (Math.sin(x2 / width) * shift) + 300;
+		int y1 = (int) (Math.sin(x1 / width) * shift) + middle;
+		int y2 = (int) (Math.sin(x2 / width) * shift) + middle;
 
 		if(bxSpeed > 0){
 			bySpeed = (y1 - y2);
@@ -157,8 +160,7 @@ public void levelOne(){
 	gameBones();
 	
 	if(contact()){
-		changes();
-		  
+		changes(110, 20);
 		}
 	
 	
@@ -169,7 +171,8 @@ public void levelTwo(){
 	gameBones();
 	
 	if(contact()){
-			changes();
+		 	changes(90, 45);
+	
 		}
 		
 }
@@ -177,12 +180,54 @@ public void levelTwo(){
 
 public void levelThree(){
 	 gameBones();
+	 
+	 if(contact()){
+		 middle = 200;
+		changes(100, 30);
+		
+	 }
+}
+public void levelFour(){
+ gameBones();
+	 
+	 if(contact()){
+		 middle = 400;
+		changes(60, 30);
+		
+	 }
+	
+}
+
+public void levelFive(){
+ gameBones();
+	 
+	 if(contact()){
+		middle = 300;
+		changes(110, 10);
+		middle = 1000;
+		
+	 }
+	
+}
+
+public void levelSix(){
+ gameBones();
+	 
+	 if(contact()){
+		mode++;
+	 }
+	
+}
+public void seven(){
+	
+	background(0, 200, 0);
+	fill(0);
+	text("You win!!!", 270, 300);
+
 }
 
 public void gameBones(){
-	fill(0);
-	text(score, 50, 50);
-	
+
 	
 	fill(0);
 	drawLine(strt, shift, nextAmount, width);
@@ -199,46 +244,18 @@ public void gameBones(){
 }
 
 
-public void changes(){
+public void changes(int shft, int wdth){
 	
 	score++;
 	mode++;
-	shift += (int)(Math.random()*10);
-	width += (int)(Math.random()*10);
+	shift = shft;
+	width = wdth;
 	redX = strt;
 	redY = (int) (Math.sin(strt / width) * shift) + middle;
 	blueX = 580;
-	blueY = (int) (Math.sin(580 / width) * shift) + middle;
+	blueY = (int) (Math.sin(blueX / width) * shift) + middle;
 	
 }
-
-
-	/*public void mouseReleased(){
-		
-		if(Math.abs(mouseX - redX) < size || Math.abs(mouseX - blueX) < size ){
-			if(Math.abs(mouseY - redY) < size || Math.abs(mouseY - blueY) < size ){
-				if( Math.abs(redX - blueX) < size && Math.abs( redY - blueY) < size){
-					background(0, 200, 0);
-					score++;
-				}
-			}
-			
-		}
-		
-		
-		
-		
-		 score++;
-			mode = 1;
-			shift = 110;
-			width =  20;
-			redX = strt;
-			redY = (int) (Math.sin(strt / width) * shift) + middle;
-			blueX = 580;
-			blueY = (int) (Math.sin(580 / width) * shift) + middle;
-		
-		
-	}*/
 
 }
 
