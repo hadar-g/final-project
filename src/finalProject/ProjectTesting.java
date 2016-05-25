@@ -7,7 +7,7 @@ import processing.core.PApplet;
 public class ProjectTesting extends PApplet {
 
 	int middle;
-	int strt;
+	int strt; 
 	int shift;
 	int nextAmount;
 	double width;
@@ -24,7 +24,7 @@ public class ProjectTesting extends PApplet {
 	int bySpeed;
 	int score;
 	int mode;
-	
+	int clicks;
 	
 
 	public void setup() {
@@ -54,6 +54,8 @@ public class ProjectTesting extends PApplet {
 		
 		textSize(30);
 		
+		clicks = 5;
+		
 		
 	
 	}
@@ -63,6 +65,7 @@ public class ProjectTesting extends PApplet {
 		
 		fill(0);
 		text("level: " + mode, 50, 50);
+		text("clicks remaining: " + clicks, 300, 50);
 		
 		
 		if(mode == 1)levelOne();
@@ -241,6 +244,10 @@ public void gameBones(){
 	moveBlue(blueX, blueY, shift, width);
 	
 	contact();
+	
+	if(clicks <= 0){
+		youLose();
+	}
 }
 
 
@@ -254,6 +261,20 @@ public void changes(int shft, int wdth){
 	redY = (int) (Math.sin(strt / width) * shift) + middle;
 	blueX = 580;
 	blueY = (int) (Math.sin(blueX / width) * shift) + middle;
+	clicks = 6;
+	
+}
+
+public void mouseReleased(){
+	clicks--;
+}
+
+public void youLose(){
+	background(200, 0, 0);
+		
+	text("YOU LOSE!!!", 300, 300);
+	
+	
 	
 }
 

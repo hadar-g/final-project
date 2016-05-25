@@ -21,3 +21,8 @@ Day 6: 5/23/16
 	-missed day 5 :(
 	-made new levels
 	-made methods to hold previously free floating things
+	
+Day 7: 5/24/16
+	-made all the levels and end screen
+	-fixed all bugs and made game run smooth
+	-put on finishing touches
