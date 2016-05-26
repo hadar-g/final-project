@@ -26,3 +26,15 @@ Day 7: 5/24/16
 	-made all the levels and end screen
 	-fixed all bugs and made game run smooth
 	-put on finishing touches
+	
+Day 8: 5/25/16
+	-Last day!
+	-added click counter
+	-added lose screen
+	
+Day 9: 5/26/16
+
+	-actually last day now
+	-completely finished write up
+	-added lib folder for core
+	-project finished!! :)	
